@@ -30,6 +30,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  # systemd.network.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -137,7 +138,7 @@
     gnome.dconf-editor
     zoom-us
     nvme-cli
-
+    vlc
     # system tools
     cpufetch
     fastfetch
