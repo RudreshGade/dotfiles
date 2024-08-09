@@ -101,6 +101,13 @@
       aws.disabled = true;
       gcloud.disabled = true;
       line_break.disabled = true;
+      gradle.symbol = "💀";
+      
+
+      # [battery]
+      # full_symbol = '🔋 '
+      # charging_symbol = '⚡️ '
+      # discharging_symbol = '💀 '
     };
   };
 

@@ -105,7 +105,7 @@
     description = "Rudresh";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      #  thunderbird
+      #  thunderbird  
     ];
   };
 
@@ -128,17 +128,21 @@
     vscode
     spotify
     brave
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnome-extension-manager
     riseup-vpn
     powerstat
     refind
     linux-wifi-hotspot
     dconf
-    gnome.dconf-editor
-    zoom-us
+    dconf-editor
+    zoom-us 
     nvme-cli
     vlc
+    python312Packages.pip
+    kdeconnect
+    libreoffice
+
     # system tools
     cpufetch
     fastfetch
