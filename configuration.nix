@@ -142,6 +142,7 @@
     python312Packages.pip
     kdeconnect
     libreoffice
+    texliveFull
 
     # system tools
     cpufetch

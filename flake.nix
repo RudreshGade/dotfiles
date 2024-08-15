@@ -12,7 +12,7 @@
       url = "github:nix-community/home-manager/master";
     };
     spicetify = {
-      url = "github:the-argus/spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -42,7 +42,7 @@
           home-manager.users.rudresh = {
             home.username = "rudresh";
             home.homeDirectory = "/home/rudresh";
-            imports = [ ./home.nix ./spicetify.nix ];
+            imports = [ ./home.nix  ];
           };
         }
       ];
