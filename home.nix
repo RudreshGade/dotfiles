@@ -1,4 +1,4 @@
-{ config, lib, spicetify-nix, bash, inputs, pkgs, ... }:
+{ config, lib, spicetify-nix, riseup-vpn, bash, inputs, pkgs, ... }:
 
 
 {
@@ -92,6 +92,16 @@
   #   userEmail = "xiaoyin_c@qq.com";
   # };
 
+
+  # - Fuzzy File Search in Terminal
+  # fzf.enable = true;
+
+  # # - Fuzzy cd
+  # zoxide = {
+  #   enable = true;
+  #   enableBashIntegration = true;
+  # };
+
   # starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;
@@ -102,7 +112,7 @@
       gcloud.disabled = true;
       line_break.disabled = true;
       gradle.symbol = "💀";
-      
+
 
       # [battery]
       # full_symbol = '🔋 '

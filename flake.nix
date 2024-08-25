@@ -5,14 +5,19 @@
     # NixOS official package source, using the nixos-24.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
-    # home-manager.url = "github:nix-community/home-manager";
+    
     # home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/master";
+      # url = "github:nix-community/home-manager";
     };
     spicetify = {
       url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    vignesh = {
+      url = "github:vigneshpai2003/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

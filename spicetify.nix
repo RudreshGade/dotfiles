@@ -1,22 +1,31 @@
-{ config, lib, inputs, pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
-  spicePkgs = inputs.spicetify.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify.legacyPackages.${pkgs.system};
 in
 {
- # import the flake's module for your system
-  imports = [ inputs.spicetify.homeManagerModule ];
+  imports = [ inputs.spicetify.homeManagerModules.default ];
 
-  # configure spicetify :)
-  programs.spicetify =
-    {
-      enable = true;
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "mocha";
+  programs.spicetify = {
+    enable = true;
 
-      enabledExtensions = with spicePkgs.extensions; [
-        fullAppDisplay
-        shuffle # shuffle+ (special characters are sanitized out of ext names)
-        hidePodcasts
-      ];
-    };
+    enabledExtensions = with spicePkgs.extensions; [
+      playlistIcons
+      lastfm
+      genre
+      historyShortcut
+      hidePodcasts
+      fullAppDisplay
+      shuffle
+    ];
+
+    enabledCustomApps = with spicePkgs.apps; [
+      newReleases
+      ncsVisualizer
+      historyInSidebar
+    ];
+
+    theme = spicePkgs.themes.sleek;
+
+    colorScheme = "Cherry";
+  };
 }

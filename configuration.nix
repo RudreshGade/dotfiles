@@ -11,9 +11,33 @@
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+
+
+  # - Boot
+  boot = {
+    # - Latest Kernel
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    # - Bootloader
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+      };
+      systemd-boot = {
+
+        enable = true;
+      };
+    };
+  };
+
+  # - Fonts
+  fonts.packages = with pkgs; [
+    font-awesome
+    open-sans
+    noto-fonts
+    noto-fonts-color-emoji
+    nerdfonts
+  ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -22,8 +46,6 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  #  Use latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # # enable the icon pkg
   # services.xserver.gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
@@ -64,10 +86,14 @@
   };
 
   # Enable Garbage removing
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 5d";
+  nix = {
+    optimise.automatic = true;
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 5d";
+    };
   };
 
   # Enable CUPS to print documents.
@@ -130,20 +156,21 @@
     brave
     gnome-tweaks
     gnome-extension-manager
-    riseup-vpn
     powerstat
     refind
     linux-wifi-hotspot
     dconf
     dconf-editor
-    zoom-us 
+    zoom-us
     nvme-cli
     vlc
     python312Packages.pip
     kdeconnect
     libreoffice
     texliveFull
-
+    libsForQt5.okular
+    inputs.vignesh.packages."x86_64-linux".riseup-vpn
+    
     # system tools
     cpufetch
     fastfetch
