@@ -169,7 +169,7 @@
     libreoffice
     texliveFull
     libsForQt5.okular
-    inputs.vignesh.packages."x86_64-linux".riseup-vpn
+    riseup-vpn
     pavucontrol
     
     # system tools
