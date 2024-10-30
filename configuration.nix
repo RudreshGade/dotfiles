@@ -165,7 +165,7 @@
     nvme-cli
     vlc
     python312Packages.pip
-    kdeconnect
+    plasma5Packages.kdeconnect-kde
     libreoffice
     texliveFull
     libsForQt5.okular
