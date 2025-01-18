@@ -8,7 +8,8 @@
       reincarnate = "sudo nixos-rebuild switch --flake .";
       itachi-kill = "sudo nix-store --gc ";
       itachi-killall = "sudo nix-collect-garbage -d";
-      
+      garbage = "sudo nix-collect-garbage";
+
       powertop = "sudo powertop";
       htop = "sudo htop";
 

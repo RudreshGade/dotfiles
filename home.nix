@@ -82,9 +82,6 @@
     lm_sensors # for `sensors` command
   ];
 
-  # # - Fuzzy File Search in Terminal
-  # fzf.enable = true;
-
   # basic configuration of git, please change to your own
   # programs.git = {
   #   enable = true;

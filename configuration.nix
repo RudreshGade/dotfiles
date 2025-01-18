@@ -36,7 +36,7 @@
     open-sans
     noto-fonts
     noto-fonts-color-emoji
-    nerdfonts
+    # nerd-fonts
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -107,7 +107,7 @@
   powerManagement.powertop.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -138,6 +138,9 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install Waydroid.
+  #  virtualisation.waydroid.enable = true; 
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -155,7 +158,7 @@
     spotify
     brave
     gnome-tweaks
-    gnome-extension-manager
+    # gnome-extension-manager
     powerstat
     refind
     linux-wifi-hotspot
@@ -170,8 +173,14 @@
     texliveFull
     libsForQt5.okular
     riseup-vpn
+    telegram-desktop
     pavucontrol
-    
+    inputs.vignesh.packages."x86_64-linux".iiserpune-login-daemon
+    libnotify
+    flatpak
+    # mprime
+    xdg-desktop-portal
+
     # system tools
     cpufetch
     fastfetch
