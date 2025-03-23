@@ -16,11 +16,14 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vignesh = {
-      url = "github:vigneshpai2003/dotfiles";
-      inputs.nixpkgs.follows = "nixpkgs";
+    # vignesh = {
+    #   url = "github:vigneshpai2003/iiserpune-login-daemon";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    
+    iiserpune-login-daemon.url = "github:vigneshpai2003/iiserpune-login-daemon";
+        
     };
-  };
+    
   outputs = { self, ... }@inputs: {
     # Please replace my-nixos with your hostname
     nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {

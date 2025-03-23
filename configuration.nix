@@ -30,6 +30,11 @@
     };
   };
 
+# services.xserver.deviceSection = ''
+#   Option "TearFree" "true"
+# '';
+
+
   # - Fonts
   fonts.packages = with pkgs; [
     font-awesome
@@ -175,11 +180,14 @@
     riseup-vpn
     telegram-desktop
     pavucontrol
-    inputs.vignesh.packages."x86_64-linux".iiserpune-login-daemon
+    inputs.iiserpune-login-daemon.packages.x86_64-linux.default
     libnotify
     flatpak
     # mprime
     xdg-desktop-portal
+    android-studio
+    variety
+  
 
     # system tools
     cpufetch
